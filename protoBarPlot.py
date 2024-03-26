@@ -31,10 +31,9 @@ if not os.path.exists('protonation_test.obj'):
     # print(protoData)  # debug
 
     for target in residues:
-        print(target)
 
         lambdaIndices = getLambdaFileIndices(u, target)
-        # print(lambdaIndices)  # debug
+        print(target, lambdaIndices)
 
         for sim in sims:
             for rep in reps:
