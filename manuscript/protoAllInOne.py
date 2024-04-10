@@ -49,7 +49,7 @@ else:
             for rep in reps:
                 for chain in chains:
                     num = getLambdaFileIndices(u, resid)[chains.index(chain)]
-                    data = loadxvg(f"/home/anton/stelic/production/{sim}/{rep:02d}/lambda_coords_1us/cphmd-coord-{num}.xvg", dt=100)
+                    data = loadxvg(f"/home/anton/stelic/production/{sim}/{rep:02d}/lambda_coords/cphmd-coord-{num}.xvg", dt=100)
 
                     if resid in [49, 56, 81, 132, 140, 170, 174, 190, 194, 283]:    # HIS
                         array = [1 - val for val in movingDeprotonation(data[1])]
@@ -154,10 +154,10 @@ for resid in resids:
 
     # Set x-lim and y-lim.
     subplt.set_ylim([-0.05, 1.05])
-    subplt.set_xlim([0, 1000])
+    subplt.set_xlim([0, 2000])
 
     # If we're not in the last row, do not show the xticks.
-    subplt.set_xticks([200, 400, 600, 800])
+    subplt.set_xticks([400, 800, 1200, 1600])
     if row != nrows - 1:
         subplt.set_xticklabels([])
         subplt.xaxis.set_ticks_position('none')
